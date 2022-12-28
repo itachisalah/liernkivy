@@ -1,0 +1,43 @@
+G:
+<G>:
+    cols:3
+    ToggleButton:
+        text:'OFF'
+        on_state:root.toggle(self)
+        size_hint:None,1
+        width:'100dp'
+    Button:
+        text:'click'
+        on_press:root.click_num()
+        disabled:not root.num_active
+        
+    Label:
+        text:root.num_text
+        font_name:'Lcd.ttf'
+        font_size:'100dp'
+        color:0,1,0,1
+    Switch:
+        id :menu_switch
+        size_hint:None,1
+        width:'100dp'
+        active: False
+    Slider:
+        id:menu_slider
+        min:0
+        max:100
+        orientation:'vertical'
+        value:20
+        disabled:not menu_switch.active
+    BoxLayout:
+        orienattion:'hirezontal'
+        
+        Label:
+            font_name:'Lcd.ttf'
+            font_size:'60dp'
+            color:1,0,0,1
+            text:str(int(menu_slider.value))
+            pos:4,6
+        ProgressBar:
+            max:100
+            value:menu_slider.value
+            pos_hint:{'y':0.1,'x':0.1}

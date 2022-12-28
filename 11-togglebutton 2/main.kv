@@ -1,0 +1,17 @@
+G:
+<G>:
+    cols:3
+    ToggleButton:
+        text:'OFF'
+        on_state:root.toggle(self)
+        size_hint:None,1
+        width:'100dp'
+    Button:
+        text:'click'
+        on_press:root.click_num()
+        
+    Label:
+        text:root.num_text
+        font_name:'Lcd.ttf'
+        font_size:'100dp'
+        color:0,1,0,1
